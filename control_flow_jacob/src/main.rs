@@ -161,5 +161,5 @@ fn get_number<A: std::str::FromStr>(error_message: String) -> A{
                 },
             };
             return choice;
-        }
     }
+}
