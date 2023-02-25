@@ -19,7 +19,7 @@ fn main() {
         let mut guess = String::new();  // adding the "mut" qualifier allows it to change
         println!("Please input your guess.");
         io::stdin()
-            .read_line(&mut guess)           // so not only does & make it a reference, we neet to qualify "mut"
+            .read_line(&mut guess)           // so not only does & make it a reference, we need to qualify "mut"
             .expect("Failed to read line");  //     so that our .read_line method can change our variable
         
         

@@ -1,0 +1,31 @@
+{
+  "entities": [
+    {
+      "name": "bob",
+      "description": "the coolest accountant in the office",
+      "stats": {
+        "max_health": 3,
+        "attack_damage": 1,
+        "attack_speed": 1.0
+      }
+    },
+    {
+      "name": "fred",
+      "description": "the best janitor at the office. Bob's arch-nemesis",
+      "stats": {
+        "max_health": 4,
+        "attack_damage": 2,
+        "attack_speed": 0.5
+      }
+    },
+    {
+      "name": "Emile the Dwarf",
+      "description": "short & stout. Is rather strong and sturdy. Knows how to use a pickaxe.",
+      "stats": {
+        "max_health": 15,
+        "attack_damage": 4,
+        "attack_speed": 0.3
+      }
+    }
+  ]
+}
