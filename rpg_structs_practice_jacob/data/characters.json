@@ -26,6 +26,15 @@
         "attack_damage": 4,
         "attack_speed": 0.3
       }
+    },
+    {
+      "name": "Bilbo Swaggins",
+      "description": "epic bilbo",
+      "stats": {
+        "max_health": 90000000,
+        "attack_damage": 800000,
+        "attack_speed": 1.0
+      }
     }
   ]
 }
