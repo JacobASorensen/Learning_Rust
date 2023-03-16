@@ -26,6 +26,12 @@ struct Entity {
     stats: FightStats,
 }
 
+impl Entity {
+    fn dps(&self) -> f32 {
+        self.stats.attack_damage as f32 * self.stats.attack_speed
+    }
+}
+
 #[derive(Deserialize, Serialize, Debug)]
 struct Characters {
     entities: Vec<Entity>,
@@ -73,7 +79,7 @@ fn main() {
             2 => println!("Stored Characters are: {:#?}", saved_characters),
             3 => fight_two_entities(&saved_characters),
             4 => do_main_loop = false,
-            5_u32..=u32::MAX => println!("That was not an integer from 0 to 3."),
+            _ => println!("That was not an integer from 0 to 4."),
         }
     }
 
@@ -110,7 +116,7 @@ fn add_entity() -> Entity {
     println!("enter an attack damage");
     let attack_damage = get_number::<u32>("that was not a valid int".to_string());
     println!("enter an attack speed");
-    let attack_speed = get_number::<f32>("that was not a valid int".to_string());
+    let attack_speed = get_number::<f32>("that was not a valid number".to_string());
     let stats = FightStats {
         max_health,
         attack_damage,
