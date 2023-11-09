@@ -23,8 +23,7 @@ It takes an input number and a target number of chickens, and then runs until th
 
 Jacob made this program in order to generate data so that he could later create a closed-form model of Minecraft chicken population growth.
 
-Example:
-![](/images/chicken_example.PNG)
+![Example of running the chicken growth simulator program](/images/chicken_example.PNG)
 
 ### Understanding Ownership
 [***Erik's Project***](https://github.com/JacobASorensen/Learning_Rust/tree/main/understanding_ownership_erik)
