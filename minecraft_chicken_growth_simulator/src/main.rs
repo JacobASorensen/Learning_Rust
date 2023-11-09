@@ -1,21 +1,16 @@
 
 /*
-Chicken Info:
+Chicken Info: (pulled from Minecraft wiki)
 
-Each Chicken has EggLayTime which is randomly set to a random value between 6000 and 12000 when they lay an egg
-this value gets decremented on every tick
+Each Chicken has EggLayTime which is randomly set to a random value between 6000 and 12000 
+When they lay an egg this value gets decremented on every tick
 
 each egg has a 1/8 chance of spawning a baby
 each successful attempt has a further 1/32 to spawn 3 extra baby chickens
 
-Baby chicken takes 24000 ticks to grow up
-
-Age:
+Baby chickens take 24000 ticks to grow up
 
 Ticks per second: 20
-
-
-
 
 */
 
@@ -26,8 +21,6 @@ const BABY_GROW_TIME: u16 = 24000;
 
 fn main() {
 
-    
-    
     let mut egg_thread = thread_rng();
     let mut delay_thread = thread_rng();
 
@@ -92,6 +85,7 @@ fn main() {
     }
     print!("\n");
 }
+
 fn do_new_egg_delay( delay_thread: &mut ThreadRng) -> u16 {
     return delay_thread.gen_range(6000..12000);
 }
