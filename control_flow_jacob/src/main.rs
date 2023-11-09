@@ -15,7 +15,7 @@ fn main() {
         while do_main_loop {
         println!("\n\nHello, what would you like to do? You have 4 choices:");
         println!("0: Convert between Fahrenheit and Celsius");
-        println!("1: Generate the nth Fibonacci number");
+        println!("1: Generate the nth Fibonacci number (up to 186th)");
         println!("2: Print lyrics to \"The Twelve Days of Christmas\"");
         println!("3: Exit the Program");
         
@@ -36,10 +36,6 @@ fn main() {
 }
 
 fn do_temp_conversion() {
-    println!("\nSo do you want to convert from Fahrenheit to Celsius or Celsius to Fahrenheit?");
-    println!("0: Fahrenheit to Celsius");
-    println!("1: Celsius to Fahrenheit");
-    println!("\nPlease input your option; an integer from 0 to 1.");
     
     let mut f_to_c = true;
     let mut has_found_way = false;
@@ -87,12 +83,41 @@ fn do_temp_conversion() {
 
 fn do_nth_fibonnacci() {
 
-    let square_root_of_five = f32::powf(5.0, 0.5);
-    let inverse_sqrt_of_five = 1.0/square_root_of_five;
-
     println!("\nPlease input the Fibonacci number that you want");
 
-    let fibonacci_index = get_number::<u32>("That was not a valid integer".to_string());
+    let fibonacci_index = get_number::<usize>("That was not a valid integer".to_string());
+    
+    let fibonacci_num;
+    if fibonacci_index <= 32 {
+        fibonacci_num = closed_form_fibonacci(fibonacci_index) as u128;
+    } else {
+        let mut fib_numbers = Vec::new();
+        let mut current_fib_num = 33;
+        for i in 30..32 {
+            fib_numbers.push(closed_form_fibonacci(i) as u128);
+        }
+        fib_numbers.push(fib_numbers[fib_numbers.len() - 1] + fib_numbers[fib_numbers.len() - 2]);
+        
+        while current_fib_num <= fibonacci_index {
+            fib_numbers[current_fib_num % 3] = fib_numbers[(current_fib_num + 1) % 3] + fib_numbers[(current_fib_num + 2) % 3];
+            current_fib_num += 1;
+        }
+        //println!("n % 3: {} n+1%3: {} n+2%3: {} ", fib_numbers[0],fib_numbers[1],fib_numbers[2]);
+        fibonacci_num = fib_numbers[(current_fib_num - 1) % 3];
+    }
+    
+    println!("Fibonacci number {fibonacci_index} is {fibonacci_num}");
+    please_press_enter();
+}
+
+// I primarily kept this function in because I found it interesting
+// I originally wrote this around the time I was taking discrete II
+// This is using Binet's formula
+// This implementation is only accurate up to the 32nd fibonacci number.
+// It could likely be improved by using higher definition floats
+fn closed_form_fibonacci(fibonacci_index: usize) -> u32{
+    let square_root_of_five = f32::powf(5.0, 0.5);
+    let inverse_sqrt_of_five = 1.0/square_root_of_five;
 
     let mut left_num = 0.5*(1.0 + square_root_of_five);
     let mut right_num = 0.5*(1.0 - square_root_of_five);
@@ -104,14 +129,13 @@ fn do_nth_fibonnacci() {
     fibonacci_num = inverse_sqrt_of_five*fibonacci_num;
     
     let fibonacci_num = fibonacci_num as u32;
-    println!("The {fibonacci_index}th fibonacci number is {fibonacci_num}");
-    please_press_enter();
+    return fibonacci_num;
 }
 
 fn do_christmas_days() {
     let days = vec!["first","second","third","fourth","fifth","sixth",
                     "seventh","eighth","ninth","tenth","eleventh","twelfth"];
-    let gifts = vec!["A partridge in a pear tree",
+    let gifts = vec!["And a partridge in a pear tree",
                     "Two turtle doves",
                     "Three french hens",
                     "Four calling birds",
@@ -127,8 +151,12 @@ fn do_christmas_days() {
     let mut current_day = 0_usize;
     for day in &days {
         println!("On the {day} day of Christmas my true love gave to me:\n");
-        for i in 0_usize..=current_day {
-            println!("{}",gifts[i]);
+        if day == &days[0] {
+            println!("A {}",&gifts[0][6..]);
+        } else {
+            for i in 0_usize..=current_day {
+                println!("{}",&gifts[current_day - i]);
+            }
         }
         current_day += 1;
 
