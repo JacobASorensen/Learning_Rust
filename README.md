@@ -15,7 +15,7 @@ To run any of these projects:
 ## Rust Projects
 
 ### Minecraft Chicken Growth Simulator
-[***Jacob's Project***](/minecraft_chicken_growth_simulator/src/main.rs)
+***[Jacob's Project](/minecraft_chicken_growth_simulator/src/main.rs)***
 
 This project is meant to simulate the growth rate of Minecraft Chickens according to their in-game mechanics. 
 
@@ -26,12 +26,12 @@ Jacob made this program in order to generate data so that he could later create 
 ![Example of running the chicken growth simulator program](/images/chicken_example.PNG)
 
 ### Understanding Ownership
-[***Erik's Project***](https://github.com/JacobASorensen/Learning_Rust/tree/main/understanding_ownership_erik/src/main.rs)
+***[Erik's Project](/understanding_ownership_erik/src/main.rs)***
 
 Since ownership in Rust is significantly different from Python's garbage collector, Erik used this project to practice and get familiar with Rust's ownership system.
 
 ### RPG Structs Practice
-[***Jacob's Project***](https://github.com/JacobASorensen/Learning_Rust/tree/main/rpg_structs_practice_jacob/src/main.rs)
+***[Jacob's Project](/rpg_structs_practice_jacob/src/main.rs)***
 
 This project was made to practice using the Serde library's serialize and deserialize methods. It was also good struct practice.
 
@@ -40,14 +40,14 @@ Jacob wanted to build off of the basic console UI work he did previously in the 
 The data folder holds the serialized character data. The edit and fight functions are not yet implemented. 
 
 ### Variables
-[***Erik's Project***](https://github.com/JacobASorensen/Learning_Rust/tree/main/variables_erik/src/main.rs)
+***[Erik's Project](/variables_erik/src/main.rs)***
 
 Since Rust is statically typed, and Python is dynamically typed, Erik used this project to practice instantiating variables of various types.
 
 ### Control Flow
 [Rust Book Chapter 3](https://doc.rust-lang.org/book/ch03-00-common-programming-concepts.html)
 
-***[Jacob's Project](https://github.com/JacobASorensen/Learning_Rust/tree/main/control_flow_jacob/src/main.rs)***
+***[Jacob's Project](/control_flow_jacob/src/main.rs)***
 
 Jacob's version of this project implements all three program ideas listed at the end of chapter 3.5, those being a fibonacci number generator, a Fahrenheit/Celsius temperature convertor, and a program that outputs the lyrics to the twelve days of Christmas. 
 
@@ -55,7 +55,7 @@ For the Fibonacci generator Jacob actually implemented two functions for this, o
 
 There is not much to say about the other two programs, other than they were fun programming exercises to practice using Rust with.
 
-***[Erik's Project](https://github.com/JacobASorensen/Learning_Rust/tree/main/control_flow_erik/src/main.rs)***
+***[Erik's Project](/control_flow_erik/src/main.rs)***
 
 Erik practiced Rust's control flow and the syntax associated with it. The elements he practiced were:
 - If statements
@@ -67,21 +67,21 @@ Erik practiced Rust's control flow and the syntax associated with it. The elemen
 ### Guessing Game
 [Rust book Chapter 2](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html)
 
-***[Jacob's Project](https://github.com/JacobASorensen/Learning_Rust/tree/main/guessing_game_Jacob/src/main.rs)***
+***[Jacob's Project](/guessing_game_Jacob/src/main.rs)***
 
 Jacob practiced using match statements and revelled in the C-style commenting that Rust uses.
 
-***[Erik's Project](https://github.com/JacobASorensen/Learning_Rust/tree/main/guessing_game_erik/src/main.rs)***
+***[Erik's Project](/guessing_game_erik/src/main.rs)***
 
 Erik also practiced using match statements, although he did not revel in Rust's C-style commenting. 
 
 ### Hello Rust
 [Rust book Chapter 1](https://doc.rust-lang.org/book/ch01-00-getting-started.html)
 
-***[Jacob's Project](https://github.com/JacobASorensen/Learning_Rust/tree/main/hello-rust-jacob/src/main.rs)***
+***[Jacob's Project](/hello-rust-jacob/src/main.rs)***
 
 Jacob says "Hello fellow Rustaceans!"
 
-***[Erik's Project](https://github.com/JacobASorensen/Learning_Rust/tree/main/hello-rust-erik/hello_cargo/src/main.rs)***
+***[Erik's Project](/hello-rust-erik/hello_cargo/src/main.rs)***
 
 Erik says "Hello World!"
